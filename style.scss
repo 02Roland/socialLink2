@@ -1,0 +1,83 @@
+@mixin d-flex($direction, $a-verticale, $a-horizontale){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $a-horizontale;
+    justify-content: $a-verticale;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    height: 100vh;
+}
+body{
+    @include d-flex(column, center, center);
+    background-color: hsl(0, 0%, 8%);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container{
+    width: 400px;
+    padding: 20px;
+    background-color: hsl(0, 0%, 12%);
+    border-radius: 2px solid, black;
+    color: white;
+    @include d-flex(column, center, center);
+    border-radius: 10px;
+    #img-contain{
+        width: 100px;
+        height: 100px;
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
+
+    #description{
+        // background-color: red;
+        @include d-flex(column, center, center);
+        margin-top: 5px;
+        padding: 5px 0px;
+        h4{
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 23px;
+        }
+        span{
+            margin-top: 5px;
+            color: hsl(75, 94%, 57%);
+            font-weight: 400;
+            font-size: 14px;
+        }
+    }
+
+    h5{
+        margin-top: 20px;
+    }
+
+    #links{
+        width: 90%;
+        margin-top: 10px;
+        height: 270px;
+        @include d-flex(column, center, center);
+        justify-content: space-evenly;
+        // background-color: aqua;
+        div{
+            background-color: hsl(0, 0%, 20%);
+            width: 100%;
+            @include d-flex(row, center,center);
+            height: 40px;
+            border-radius: 5px;
+            font-weight: 600;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
